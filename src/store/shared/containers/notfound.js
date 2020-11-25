@@ -2,11 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 import { mapStateToProps, mapDispatchToProps } from '../containerProps';
-import { NotFoundContainer } from 'theme';
+import { NotFoundContainer } from '../../../../theme';
 
 export default withRouter(
-	connect(
-		mapStateToProps,
-		mapDispatchToProps
-	)(NotFoundContainer)
+	connect(mapStateToProps, mapDispatchToProps)(NotFoundContainer)
 );

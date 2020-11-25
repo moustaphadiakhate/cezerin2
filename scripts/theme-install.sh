@@ -19,7 +19,7 @@ fi
 rm -rf theme/*
 
 # 4. unzip to current theme
-unzip -q "public/content/$fileName" -d "theme"
+unzip -q "public/content/$fileName" -d theme
 
 # 5. build theme
 npm run theme:build
