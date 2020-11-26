@@ -22,9 +22,7 @@ app.set('trust proxy', 1);
 app.use(helmet());
 app.get('/images/:entity/:id/:size/:filename', (req, res, next) => {
 	// A stub of image resizing (can be done with Nginx)
-	const newUrl = `/images/${req.params.entity}/${req.params.id}/${
-		req.params.filename
-	}`;
+	const newUrl = `/images/${req.params.entity}/${req.params.id}/${req.params.filename}`;
 	req.url = newUrl;
 	next();
 });
@@ -50,5 +48,7 @@ app.get('*', pageRendering);
 
 const server = app.listen(settings.storeListenPort, () => {
 	const serverAddress = server.address();
-	winston.info(`Store running at http://localhost:${serverAddress.port}`);
+	winston.info(
+		`Store running at : ${settings.storeBaseUrl}:${serverAddress.port}`
+	);
 });
